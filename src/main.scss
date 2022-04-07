@@ -1,0 +1,78 @@
+@import "config";
+@import "utils";
+@import "button";
+
+*{
+    @include reset-pm();
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $primary-color;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    color: $secondary-color;
+    text-decoration: none;
+}
+
+h2{
+    font-weight: bolder;
+    font-size: size(6);
+}
+
+h3{
+    font-weight: lighter;
+    font-size: size(3);
+}
+
+.container{
+    margin: 100px auto;
+    width: 1280px;
+    padding: 50px;
+    box-shadow: 0 0 20px 20px rgba(0,0,0,0.1);
+    background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+ul{
+    @include reset-pm();
+    list-style: none;
+    display: flex;
+    gap:20px;
+
+    li{
+        a{
+            @include btn($terciary-color, $font-color, "true");
+            
+            &:hover{
+                @include btn($secondary-color, $terciary-color, "false");
+                box-shadow: $box-shadow;
+            }
+        }
+    }
+}
+
+header{
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.prices{
+    .prev{
+        font-size: size(2);
+        font-weight: bolder;
+        color: $font-color;
+        text-decoration: line-through;
+    }
+    .now{
+        font-size: size(5);
+        font-weight: bolder;
+    }
+}
+
